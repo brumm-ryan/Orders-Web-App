@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Orders-Web-App/static/css/main.d786f1c2.css",
-    "main.js": "/Orders-Web-App/static/js/main.c5326dc6.js",
+    "main.js": "/Orders-Web-App/static/js/main.aa7a293b.js",
     "static/js/787.37064f1d.chunk.js": "/Orders-Web-App/static/js/787.37064f1d.chunk.js",
     "index.html": "/Orders-Web-App/index.html",
     "main.d786f1c2.css.map": "/Orders-Web-App/static/css/main.d786f1c2.css.map",
-    "main.c5326dc6.js.map": "/Orders-Web-App/static/js/main.c5326dc6.js.map",
+    "main.aa7a293b.js.map": "/Orders-Web-App/static/js/main.aa7a293b.js.map",
     "787.37064f1d.chunk.js.map": "/Orders-Web-App/static/js/787.37064f1d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d786f1c2.css",
-    "static/js/main.c5326dc6.js"
+    "static/js/main.aa7a293b.js"
   ]
 }
