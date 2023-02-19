@@ -29,12 +29,21 @@ class App extends React.Component<{}, AppState>{
     this.updateCreateOrderDialog = this.updateCreateOrderDialog.bind(this);
     this.postOrder = this.postOrder.bind(this);
   }
+
   state: AppState = {
         orders: [],
         selectedGuids: [],
         createOrderDialog: false,
         searchValue: ""
   }
+
+  theme = createTheme({
+        palette: {
+            primary: {
+                main: red[500],
+            }
+        }
+  })
 
   componentDidMount() {
     this.getOrders()
@@ -110,14 +119,6 @@ class App extends React.Component<{}, AppState>{
     }
   }
 
-  theme = createTheme({
-        palette: {
-            primary: {
-                main: red[500],
-            }
-        }
-    })
-
     render() {
     return (
         <ThemeProvider theme={this.theme}>
@@ -126,20 +127,21 @@ class App extends React.Component<{}, AppState>{
                 <ResponsiveAppBar></ResponsiveAppBar>
             </div>
             <div className="header-components">
-                <SearchBar style={{width:window.innerWidth * 0.3, marginRight: '20px', marginLeft: '5px', height:45}} onChange={(e) => this.setState({searchValue:e})}
+                <SearchBar style={{width:window.innerWidth * 0.3, marginRight: '20px', marginLeft: '5px', height:45}}
+                           onChange={(e) => this.setState({searchValue:e})}
                            onCancelSearch={() => this.setState({searchValue:""})}/>
-                <Button variant="outlined" sx={{m:1,height:45}} onClick={() => this.setState({createOrderDialog:true})} startIcon={<AddIcon />} >Create Order</Button>
-                <Button variant="outlined" sx={{m:1, height:45}} onClick={() => this.deleteOrders(this.state.selectedGuids)} startIcon={<DeleteIcon />}>Delete Order(s)</Button>
+                <Button variant="outlined" sx={{m:1,height:45}} onClick={() => this.setState({createOrderDialog:true})}
+                        startIcon={<AddIcon />} >Create Order</Button>
+                <Button variant="outlined" sx={{m:1, height:45}} onClick={() => this.deleteOrders(this.state.selectedGuids)}
+                        startIcon={<DeleteIcon />}>Delete Order(s)</Button>
                 <FormControl sx={{ m: 1, minWidth: 130}} color="primary">
-                    <InputLabel color="primary">Order Type</InputLabel>
+                    <InputLabel>Order Type</InputLabel>
                     <Select
                         variant="outlined"
                         autoWidth
-                        color="primary"
                         label="Order Type"
                         style={{ height:45}}
-                        onChange={(e:SelectChangeEvent) => this.getFilteredOrderType(e.target.value)}
-                    >
+                        onChange={(e:SelectChangeEvent) => this.getFilteredOrderType(e.target.value)}>
                         <MenuItem value={""}>All Types</MenuItem>
                         <MenuItem value={"Standard"}>Standard</MenuItem>
                         <MenuItem value={"SaleOrder"}>Sale Order</MenuItem>
