@@ -29,20 +29,20 @@ const OrderTypes = [
         label: 'Standard'
     },
     {
-        value: 'SalesOrder',
-        label: 'SalesOrder'
+        value: 'SaleOrder',
+        label: 'Sale Order'
     },
     {
         value: 'PurchaseOrder',
-        label: 'PurchaseOrder'
+        label: 'Purchase Order'
     },
     {
         value: 'TransferOrder',
-        label: 'TransferOrder'
+        label: 'Transfer Order'
     },
     {
         value: 'ReturnOrder',
-        label: 'ReturnOrder'
+        label: 'Return Order'
     },
 ];
 

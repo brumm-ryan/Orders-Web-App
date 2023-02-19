@@ -1,6 +1,7 @@
 {
-  "name": "orders-app",
+  "name": "orders-web-app",
   "version": "0.1.0",
+  "homepage": "https://brumm-ryan.github.io/Orders-Web-App",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.6",
@@ -31,6 +32,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -55,6 +58,7 @@
     ]
   },
   "devDependencies": {
-    "@types/uuid": "^9.0.0"
+    "@types/uuid": "^9.0.0",
+    "gh-pages": "^5.0.0"
   }
 }
